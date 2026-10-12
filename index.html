@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prism One | 3D Product Stage</title>
+<meta name="description" content="Prism One. A sculptural object for light and sound. Explore it in 3D.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"><span id="progressFill"></span></div>
+
+<header class="nav" id="top">
+  <div class="navInner">
+    <a class="brand" href="#stage" data-scroll>Prism<span class="brandDot"></span></a>
+    <nav class="links" id="navLinks" aria-label="Primary">
+      <a href="#stage" data-scroll>Stage</a>
+      <a href="#highlights" data-scroll>Highlights</a>
+      <a href="#specs" data-scroll>Specs</a>
+      <a href="#pricing" data-scroll>Pricing</a>
+      <a href="#order" data-scroll>Order</a>
+    </nav>
+    <div class="navActions">
+      <a class="btn btnSmall btnDark" href="#order" data-scroll>Get Prism</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobileMenu" id="mobileMenu">
+    <a href="#stage" data-scroll>Stage</a>
+    <a href="#highlights" data-scroll>Highlights</a>
+    <a href="#specs" data-scroll>Specs</a>
+    <a href="#pricing" data-scroll>Pricing</a>
+    <a href="#order" data-scroll>Order</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO / STAGE -->
+<section class="hero" id="stage">
+  <div class="floatLayer" aria-hidden="true">
+    <span class="floatShape s1" data-speed="26"></span>
+    <span class="floatShape s2" data-speed="48"></span>
+    <span class="floatShape s3" data-speed="70"></span>
+    <span class="floatShape s4" data-speed="36"></span>
+  </div>
+  <div class="wrap heroGrid">
+    <div class="heroCopy">
+      <p class="eyebrow reveal">New arrival Prism One</p>
+      <h1 class="reveal">A sculptural object for light and sound</h1>
+      <p class="lede reveal">Prism One sits on your desk and fills the room with calm light and clear audio. Spin it, tint it, make it yours.</p>
+      <div class="variantRow reveal">
+        <p class="variantLabel">Pick a finish</p>
+        <div class="swatches" role="group" aria-label="Finish options">
+          <button class="swatch isActive" data-color="#4F46E5" data-name="Indigo" aria-label="Indigo finish" type="button"><span class="dot" style="background:#4F46E5"></span>Indigo</button>
+          <button class="swatch" data-color="#1F2937" data-name="Slate" aria-label="Slate finish" type="button"><span class="dot" style="background:#1F2937"></span>Slate</button>
+          <button class="swatch" data-color="#E07856" data-name="Clay" aria-label="Clay finish" type="button"><span class="dot" style="background:#E07856"></span>Clay</button>
+        </div>
+        <p class="finishNote" id="finishNote" aria-live="polite">Now viewing Indigo</p>
+      </div>
+      <div class="ctaRow reveal">
+        <a class="btn btnAccent" href="#order" data-scroll>Order now</a>
+        <a class="btn btnGhost" href="#specs" data-scroll>See specs</a>
+      </div>
+      <div class="priceCard reveal">
+        <div>
+          <p class="priceName">Prism One</p>
+          <p class="priceSub">In stock. Free shipping over 150.</p>
+        </div>
+        <p class="priceVal">$299</p>
+      </div>
+      <div class="miniStats reveal">
+        <div><strong>48</strong><span>hr playtime</span></div>
+        <div><strong>256</strong><span>light zones</span></div>
+        <div><strong>5</strong><span>yr warranty</span></div>
+      </div>
+    </div>
+    <div class="stageCol reveal">
+      <div class="stageFrame" id="stageFrame">
+        <canvas id="stageCanvas" aria-label="Interactive 3D view of Prism One"></canvas>
+        <div class="stageFallback" id="stageFallback" hidden>
+          <div class="fallbackShape"></div>
+          <p>3D preview needs a network connection. All else works fine.</p>
+        </div>
+        <div class="stageBar">
+          <span class="liveDot"></span>
+          <span id="stageStatus">Live 3D</span>
+          <span class="stageHint">Drag to spin. Move mouse for parallax.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS / SCRUB -->
+<section class="dark" id="highlights">
+  <div class="wrap">
+    <p class="eyebrow light reveal">Why Prism</p>
+    <h2 class="reveal">Made to be looked at and listened to</h2>
+    <p class="sectionSub reveal">Keep scrolling. The object on the stage turns with you.</p>
+    <div class="cards3">
+      <article class="card cardDark reveal">
+        <div class="iconBox">01</div>
+        <h3>Solid build</h3>
+        <p>CNC aluminium body with a soft matte coat that stays cool to the touch.</p>
+      </article>
+      <article class="card cardDark reveal">
+        <div class="iconBox">02</div>
+        <h3>Light that listens</h3>
+        <p>256 LEDs react to your music in real time with zero flicker.</p>
+      </article>
+      <article class="card cardDark reveal">
+        <div class="iconBox">03</div>
+        <h3>Sound that fills</h3>
+        <p>Dual drivers tuned for voice and vinyl alike. Room filling from any corner.</p>
+      </article>
+    </div>
+    <div class="scrubMeter reveal">
+      <p>Scroll progress</p>
+      <div class="meter"><span id="scrubFill"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="light" id="specs">
+  <div class="wrap">
+    <p class="eyebrow reveal">Numbers</p>
+    <h2 class="reveal">Small object, serious specs</h2>
+    <div class="specGrid">
+      <div class="specCard reveal"><strong><span class="count" data-target="48">0</span></strong><span>hr playtime per charge</span></div>
+      <div class="specCard reveal"><strong><span class="count" data-target="256">0</span></strong><span>individually lit zones</span></div>
+      <div class="specCard reveal"><strong><span class="count" data-target="360">0</span></strong><span>degree sound projection</span></div>
+      <div class="specCard reveal"><strong><span class="count" data-target="5">0</span></strong><span>yr warranty included</span></div>
+    </div>
+    <div class="specRows reveal">
+      <div><span>Body</span><span>Recycled aluminium, matte coat</span></div>
+      <div><span>Audio</span><span>Dual 40mm drivers, passive bass</span></div>
+      <div><span>Light</span><span>256 zone ambient ring, 2700 to 6500K</span></div>
+      <div><span>Power</span><span>USB C fast charge, 0 to full in 90 min</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING + TESTIMONIALS -->
+<section class="lightAlt" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow reveal">Pricing</p>
+    <h2 class="reveal">Choose yours</h2>
+    <div class="cards3">
+      <article class="card reveal">
+        <h3>Solo</h3>
+        <p class="tierPrice">$299</p>
+        <p class="tierSub">One Prism for desk or shelf.</p>
+        <ul>
+          <li>Prism One in any finish</li>
+          <li>USB C cable in box</li>
+          <li>30 day returns</li>
+        </ul>
+        <button class="btn btnGhost tierBtn" data-tier="Solo" type="button">Pick Solo</button>
+      </article>
+      <article class="card cardFeature reveal">
+        <p class="flag">Most picked</p>
+        <h3>Studio</h3>
+        <p class="tierPrice">$499</p>
+        <p class="tierSub">A pair that links in stereo.</p>
+        <ul>
+          <li>Two Prism units</li>
+          <li>Stereo link plus app control</li>
+          <li>Priority support</li>
+        </ul>
+        <button class="btn btnAccent tierBtn" data-tier="Studio" type="button">Pick Studio</button>
+      </article>
+      <article class="card reveal">
+        <h3>Gallery</h3>
+        <p class="tierPrice">$899</p>
+        <p class="tierSub">Four units for large rooms.</p>
+        <ul>
+          <li>Four Prism units</li>
+          <li>Room calibration visit</li>
+          <li>Extended 5 yr cover</li>
+        </ul>
+        <button class="btn btnGhost tierBtn" data-tier="Gallery" type="button">Pick Gallery</button>
+      </article>
+    </div>
+
+    <div class="quoteBox reveal" id="quotes">
+      <p class="eyebrow light">Loved by owners</p>
+      <blockquote id="quoteText">It looks like sculpture and sounds like a much bigger speaker. Guests always ask about it.</blockquote>
+      <p class="quoteName" id="quoteName">Mara, Architect in Oslo</p>
+      <div class="quoteNav">
+        <button class="qdot isOn" data-q="0" aria-label="Show quote 1" type="button"></button>
+        <button class="qdot" data-q="1" aria-label="Show quote 2" type="button"></button>
+        <button class="qdot" data-q="2" aria-label="Show quote 3" type="button"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="dark" id="order">
+  <div class="wrap orderGrid">
+    <div>
+      <p class="eyebrow light reveal">Order</p>
+      <h2 class="reveal">Get your Prism</h2>
+      <p class="sectionSub reveal">Tell us which finish you want. We reply within one business day with payment and shipping details.</p>
+      <ul class="orderPoints reveal">
+        <li>Free shipping over 150</li>
+        <li>30 day returns, no questions</li>
+        <li>5 yr warranty on every unit</li>
+      </ul>
+    </div>
+    <form class="form reveal" id="orderForm" novalidate>
+      <label>Your name
+        <input type="text" id="fName" name="name" placeholder="Ada Lovelace" autocomplete="name">
+        <small class="err" id="eName"></small>
+      </label>
+      <label>Your email
+        <input type="email" id="fEmail" name="email" placeholder="ada@example.com" autocomplete="email">
+        <small class="err" id="eEmail"></small>
+      </label>
+      <div class="formRow">
+        <label>Finish
+          <select id="fFinish" name="finish">
+            <option value="Indigo">Indigo</option>
+            <option value="Slate">Slate</option>
+            <option value="Clay">Clay</option>
+          </select>
+        </label>
+        <label>Quantity
+          <input type="number" id="fQty" name="qty" min="1" max="10" value="1">
+          <small class="err" id="eQty"></small>
+        </label>
+      </div>
+      <label>Anything we should know
+        <textarea id="fNote" name="note" rows="3" placeholder="Gift wrap, delivery date, room size"></textarea>
+      </label>
+      <button class="btn btnAccent btnFull" type="submit">Place order</button>
+      <p class="formOk" id="formOk" hidden>Thanks. We will email you soon with next steps.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footGrid">
+    <div>
+      <p class="brand brandFoot">Prism<span class="brandDot"></span></p>
+      <p class="footSub">Designed in Oslo. Assembled with care.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#stage" data-scroll>Stage</a>
+      <a href="#highlights" data-scroll>Highlights</a>
+      <a href="#specs" data-scroll>Specs</a>
+      <a href="#pricing" data-scroll>Pricing</a>
+    </nav>
+    <p class="copy">© 2026 Prism Studio. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
